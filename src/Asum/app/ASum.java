@@ -9,14 +9,13 @@ public class ASum {
             if(accum==m){
                 return n;
             }
-            if(accum>m){
-                n=n-100;
-                accum -= Math.pow(n,3);
-                if(accum<m) {
-                    return n;
-                }
+            if(accum>m) {
+                accum -=Math.pow(n  , 3)-1;
+                if (accum >= m) {
                     return -1;
                 }
+                 return n-1;
+            }
             }
         }
     }
