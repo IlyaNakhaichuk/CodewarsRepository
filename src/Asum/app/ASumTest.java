@@ -26,7 +26,7 @@ public class ASumTest {
     }
     @Test
     public void test5() {
-        assertEquals(54184, ASum.findNb(2154965339119200400L));
+        assertEquals(54684, ASum.findNb(2235614876215452900L));
     }
 
 
