@@ -9,21 +9,25 @@ class RevRot {
         if(strng.length()<1 || sz==0 || strng.length()< sz){
             return result;
         }
-        if(sz == 8) {
+        if(sz%2==0) {
             ArrayList<String> arrayList = new ArrayList();
             ArrayList<String> arrayListFinished = new ArrayList<>(  );
             String[] str = strng.split( "" );
             for (int i = 0; i < str.length; i++) {
                 arrayList.add( str[i] );
             }
-          //  for(int i=arrayList.size()-1;i>0;i=i-sz){
-           //     for(int j=i;j<;j--) {
-           //         String symbol = arrayList.get( j );
-           //         arrayList.add(,symbol );
-
-           //       }
-          //  }
-            return result;
+            while(arrayList.size()>=sz){
+            //for(int i=0;i<arrayList.size();i++){
+                for(int j=sz-1;j>=0;j--) {
+                    arrayListFinished.add(arrayList.get( j ));
+                    arrayList.remove( j );
+                  }
+            }
+            StringBuilder stringBuilder = new StringBuilder(  );
+            for(int x=0;x<arrayListFinished.size();x++){
+                stringBuilder.append( arrayListFinished.get( x ) );
+            }
+            return stringBuilder.toString();
         }
         ArrayList<String> arrayList = new ArrayList<>(  );
         String[] str = strng.split( "" );
