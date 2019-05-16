@@ -3,19 +3,10 @@ package GPSSpeed.app;
 public class GpsSpeed {
 
     public static int gps(int s, double[] x) {
-        int[] speed= new int[x.length/2];
-        int max=0;
-        int index=0;
-        for(int i=0;i<x.length;i++) {
-                speed[index] = (int) ((3600 * (-1) * (x[i] - x[++i])) / s);
-                index++;
-                if(index==speed.length){break;}
+        double maxDiff = 0.0;
+        for(int i = 0; i < x.length -1; i++){
+            maxDiff = Math.max(x[i+1] - x[i], maxDiff);
         }
-        for (int a=0; a<speed.length;a++){
-            if(max<speed[a]){
-                max=speed[a];
-            }
-        }
-        return max;
+        return (int)Math.floor(maxDiff*3600.0/s);
     }
 }
