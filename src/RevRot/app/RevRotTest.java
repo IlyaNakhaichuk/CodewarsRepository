@@ -19,4 +19,9 @@ public class RevRotTest {
         String x = "7330499108728157645517604096723459856208";
         testing( RevRot.revRot( x,8 ), "1994033775182780067155464327690480265895" );
     }
+    @Test
+    public void test2(){
+        String y ="328704429330554939960";
+        testing( RevRot.revRot(y, 6) ,"407823033924939455960");
+    }
 }
