@@ -2,13 +2,15 @@ package PerfectPower;
 import java.util.Random;
 import org.junit.Test;
 import static java.lang.Math.log;
+import static java.lang.Math.pow;
+import static java.lang.Math.round;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertNotNull;
 
 public class PerfectPowerTest {
-/*
+
     @Test
     public void test0() {
         assertNull("0 is not a perfect number", PerfectPower.isPerfectPower(0));
@@ -78,6 +80,35 @@ public class PerfectPowerTest {
         }
     }
 
+    @Test
+    public void testRandomNumbersExact() {
+        Random rnd = new Random();
+        for (int i = 0; i < 100; i++) {
+            int l = rnd.nextInt(1000000);
+            int[] s = solution(l);
+            int[] r = PerfectPower.isPerfectPower(l);
+            if (s == null) {
+                assertNull(l+" is not a perfect power", r);
+            }
+            else {
+                assertNotNull(l+" is a perfect power", r);
+                assertEquals(r[0]+"^"+r[1]+"!="+l, l, ipow(r[0], r[1]));
+            }
+        }
+    }
+
+    private static int[] solution(int n) {
+        for (int i = 2; ; i++) {
+            int r = root(n, i);
+            if (r < 2) return null;
+            if (ipow(r, i) == n) return new int[]{r, i};
+        }
+    }
+
+    private static int root(int n, int r) {
+        return (int)round(pow(n, 1.0/r));
+    }
+
     private static int ipow(int b, int e) {
         int p = 1;
         for (; e > 0; e >>= 1) {
@@ -86,5 +117,5 @@ public class PerfectPowerTest {
         }
         return p;
     }
-*/
+
 }
