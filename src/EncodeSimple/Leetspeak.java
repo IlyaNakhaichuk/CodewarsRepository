@@ -1,5 +1,6 @@
 package EncodeSimple;
 
+
 public class Leetspeak extends Encoder {
 
     public String encode(String source){
