@@ -9,16 +9,16 @@ public class Leetspeak extends Encoder {
     public String encode(String source){
         if(source == null || source == ""){return "";}
 
-        Map<Character,String> map = new HashMap<>(  );
-        map.put('a', "4");
-        map.put('e', "3");
-        map.put('l', "1");
-        map.put('m', "/^^\\");
-        map.put('o', "0");
-        map.put('u', "(_)");
+        Map<Character,String> characterDictionary = new HashMap<>(  );
+        characterDictionary.put('a', "4");
+        characterDictionary.put('e', "3");
+        characterDictionary.put('l', "1");
+        characterDictionary.put('m', "/^^\\");
+        characterDictionary.put('o', "0");
+        characterDictionary.put('u', "(_)");
         StringBuilder out = new StringBuilder(  );
         for(char x : source.toCharArray()){
-            String temp = map.get( Character.toLowerCase( x ) );
+            String temp = characterDictionary.get( Character.toLowerCase( x ) );
             if(temp == null) temp = Character.toString( x );
             out.append( temp );
         }
