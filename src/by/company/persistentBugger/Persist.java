@@ -8,10 +8,10 @@ class Persist {
         }
         int numberOfRepetitions=0;
         do{
-            int [] convertidNunber = conversionNumber( n );
+            int [] convertidNumber = conversionNumber( n );
             n=1;
-            for(int i = 0; i<convertidNunber.length;i++){
-                n*=convertidNunber[i];
+            for(int i = 0; i<convertidNumber.length;i++){
+                n*=convertidNumber[i];
             }
             numberOfRepetitions++;
             if (String.valueOf( n ).length()>1){
